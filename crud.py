@@ -1,6 +1,6 @@
 
-from app import database
-from app.schemas import ItemCreate, ItemUpdate
+import database
+from schemas import ItemCreate, ItemUpdate
 from fastapi import HTTPException
 
 async def create_item(item: ItemCreate):

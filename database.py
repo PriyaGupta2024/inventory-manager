@@ -5,7 +5,7 @@ from datetime import timedelta
 from couchbase.options import ClusterOptions, ClusterTimeoutOptions, QueryOptions
 from couchbase.management.buckets import CreateBucketSettings
 import uuid
-from app.schemas import ItemCreate, ItemUpdate, Item
+from schemas import ItemCreate, ItemUpdate, Item
 
 from starlette.concurrency import run_in_threadpool  # to run sync code async-friendly
 
