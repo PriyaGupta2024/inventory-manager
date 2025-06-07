@@ -5,7 +5,7 @@ from datetime import timedelta
 from couchbase.options import ClusterOptions, ClusterTimeoutOptions
 from couchbase.management.buckets import CreateBucketSettings
 from starlette.concurrency import run_in_threadpool
-from .schemas import ItemCreate, ItemUpdate, Item
+from schemas import ItemCreate, ItemUpdate, Item
 import uuid
 
 # 💡 Replace with your real Capella connection string
