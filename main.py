@@ -1,7 +1,8 @@
 
 from fastapi import FastAPI
-from app import crud, database
-from app.schemas import ItemCreate, ItemUpdate
+import crud 
+import database
+from schemas import ItemCreate, ItemUpdate
 
 app = FastAPI(title="Inventory Manager API")
 
