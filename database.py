@@ -2,12 +2,18 @@
 from couchbase.auth import PasswordAuthenticator
 from couchbase.cluster import Cluster
 from datetime import timedelta
-from couchbase.options import ClusterOptions, ClusterTimeoutOptions, QueryOptions
+from couchbase.options import ClusterOptions, ClusterTimeoutOptions
 from couchbase.management.buckets import CreateBucketSettings
+from starlette.concurrency import run_in_threadpool
+from .schemas import ItemCreate, ItemUpdate, Item
 import uuid
-from schemas import ItemCreate, ItemUpdate, Item
 
-from starlette.concurrency import run_in_threadpool  # to run sync code async-friendly
+# 💡 Replace with your real Capella connection string
+COUCHBASE_CONNECTION_STRING = "couchbases://cb.r3qa0unhxpltrg-w.cloud.couchbase.com"
+
+USERNAME = "Priya"        # Database access user you created
+PASSWORD = "Priya@2210"
+BUCKET_NAME = "inventory"
 
 cluster = None
 bucket = None
@@ -15,16 +21,16 @@ collection = None
 
 async def init_db():
     global cluster, bucket, collection
-    # Added timeout options here
     cluster = Cluster(
-        "couchbase://localhost",
+        COUCHBASE_CONNECTION_STRING,
         ClusterOptions(
-            PasswordAuthenticator("Priya", "123456"),
-            timeout_options=ClusterTimeoutOptions(kv_timeout=timedelta(seconds=10))  # 10 seconds timeout
+            PasswordAuthenticator(USERNAME, PASSWORD),
+            timeout_options=ClusterTimeoutOptions(kv_timeout=timedelta(seconds=10))
         )
     )
-    bucket = cluster.bucket("inventory")
+    bucket = cluster.bucket(BUCKET_NAME)
     collection = bucket.default_collection()
+
 
 # Wrap blocking calls with run_in_threadpool for async compatibility
 
