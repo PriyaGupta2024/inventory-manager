@@ -11,7 +11,7 @@ import uuid
 # 💡 Replace with your real Capella connection string
 COUCHBASE_CONNECTION_STRING = "couchbases://cb.r3qa0unhxpltrg-w.cloud.couchbase.com"
 
-USERNAME = "Priya"        # Database access user you created
+USERNAME = "inventory"        # Database access user you created
 PASSWORD = "Priya@2210"
 BUCKET_NAME = "inventory"
 
