@@ -18,7 +18,7 @@ A FastAPI-based backend project for managing inventory items (stored in Couchbas
 
 ## 📄 API Docs
 Once deployed:  
-➡️ `https://your-render-url/docs`
+➡️ `https://inventory-manager-shb6.onrender.com/docs`
 
 ## 🗃 Data Storage
 All items are stored in Couchbase as JSON documents.
