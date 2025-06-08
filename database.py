@@ -13,7 +13,7 @@ COUCHBASE_CONNECTION_STRING = "couchbases://cb.r3qa0unhxpltrg-w.cloud.couchbase.
 
 USERNAME = "inventory"        # Database access user you created
 PASSWORD = "Priya@2210"
-BUCKET_NAME = "inventory"
+BUCKET_NAME = "travel-sample"
 
 cluster = None
 bucket = None
