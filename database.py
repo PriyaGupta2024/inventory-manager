@@ -8,8 +8,9 @@ from starlette.concurrency import run_in_threadpool
 from schemas import ItemCreate, ItemUpdate, Item
 import uuid
 
-# 💡 Replace with your real Capella connection string
+
 COUCHBASE_CONNECTION_STRING = "couchbases://cb.r3qa0unhxpltrg-w.cloud.couchbase.com"
+#COUCHBASE_CONNECTION_STRING = "couchbase://127.0.0.1"
 
 USERNAME = "inventory"        # Database access user you created
 PASSWORD = "Priya@2210"
